@@ -8,6 +8,7 @@ syntax = "proto3";
 
 package bosdyn.api.graph_nav;
 
+option go_package = "github.com/khssnv/spot-sdk/prebuilt/go/bosdyn/api/graph_nav";
 option java_outer_classname = "MapProcessingServiceProto";
 
 import "bosdyn/api/graph_nav/map_processing.proto";

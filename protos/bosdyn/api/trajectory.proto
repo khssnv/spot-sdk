@@ -8,7 +8,9 @@ syntax = "proto3";
 
 package bosdyn.api;
 
+option go_package = "github.com/khssnv/spot-sdk/prebuilt/go/bosdyn/api";
 option java_outer_classname = "TrajectoryProto";
+
 import "bosdyn/api/geometry.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";

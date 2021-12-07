@@ -8,6 +8,7 @@ syntax = "proto3";
 
 package bosdyn.api.spot_cam;
 
+option go_package = "github.com/khssnv/spot-sdk/prebuilt/go/bosdyn/api/spot_cam";
 option java_outer_classname = "CompositorProto";
 
 import "bosdyn/api/header.proto";

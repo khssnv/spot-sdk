@@ -14,6 +14,7 @@ import "bosdyn/api/license.proto";
 import "bosdyn/api/world_object.proto";
 import "bosdyn/api/graph_nav/map.proto";
 
+option go_package = "github.com/khssnv/spot-sdk/prebuilt/go/bosdyn/api/graph_nav";
 option java_outer_classname = "RecordingProto";
 
 // The RecordingEnvironment is a set of annotation information and a name for the

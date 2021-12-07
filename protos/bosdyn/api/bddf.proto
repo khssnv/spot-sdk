@@ -10,6 +10,8 @@ import "google/protobuf/timestamp.proto";
 
 package bosdyn.api;
 
+option go_package = "github.com/khssnv/spot-sdk/prebuilt/go/bosdyn/api";
+
 // The file format consists of 3 kinds of blocks with simple framing:
 //  - Serialized DescriptorBlock protos, describing either the main file,
 //     a defining a series of data blocks, or a file index,

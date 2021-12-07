@@ -8,6 +8,7 @@ syntax = "proto3";
 
 package bosdyn.api.spot;
 
+option go_package = "github.com/khssnv/spot-sdk/prebuilt/go/bosdyn/api/spot";
 option java_outer_classname = "SpotCheckServiceProto";
 
 import "bosdyn/api/spot/spot_check.proto";

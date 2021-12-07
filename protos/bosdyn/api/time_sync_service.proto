@@ -8,6 +8,7 @@ syntax = "proto3";
 
 package bosdyn.api;
 
+option go_package = "github.com/khssnv/spot-sdk/prebuilt/go/bosdyn/api";
 option java_outer_classname = "TimeSyncServiceProto";
 
 import "bosdyn/api/time_sync.proto";

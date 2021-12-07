@@ -7,6 +7,8 @@
 syntax = "proto3";
 
 package bosdyn.api.auto_return;
+
+option go_package = "github.com/khssnv/spot-sdk/prebuilt/go/bosdyn/api/auto_return";
 option java_outer_classname = "AutoReturnProto";
 
 import "google/protobuf/any.proto";

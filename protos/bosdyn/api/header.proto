@@ -11,7 +11,7 @@ package bosdyn.api;
 import "google/protobuf/any.proto";
 import "google/protobuf/timestamp.proto";
 
-option go_package = "bosdyn/api";
+option go_package = "github.com/khssnv/spot-sdk/prebuilt/go/bosdyn/api";
 option java_outer_classname = "HeaderProto";
 
 // Standard header attached to all GRPC requests to services.

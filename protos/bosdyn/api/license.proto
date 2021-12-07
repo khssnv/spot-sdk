@@ -8,6 +8,7 @@ syntax = "proto3";
 
 package bosdyn.api;
 
+option go_package = "github.com/khssnv/spot-sdk/prebuilt/go/bosdyn/api";
 option java_outer_classname = "LicenseProto";
 
 import "bosdyn/api/header.proto";

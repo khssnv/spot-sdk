@@ -10,7 +10,7 @@ package bosdyn.api;
 
 import "google/protobuf/wrappers.proto";
 
-option go_package = "bosdyn/api";
+option go_package = "github.com/khssnv/spot-sdk/prebuilt/go/bosdyn/api";
 option java_outer_classname = "GeometryProto";
 
 // Two dimensional vector primitive.

@@ -8,6 +8,8 @@ syntax = "proto3";
 
 package bosdyn.api;
 
+option go_package = "github.com/khssnv/spot-sdk/prebuilt/go/bosdyn/api";
+
 import "bosdyn/api/network_compute_bridge.proto";
 
 // RPCs for sending images or other data to networked server for computation.

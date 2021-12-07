@@ -8,6 +8,7 @@ syntax = "proto3";
 
 package bosdyn.api.docking;
 
+option go_package = "github.com/khssnv/spot-sdk/prebuilt/go/bosdyn/api/docking";
 option java_outer_classname = "DockingServiceProto";
 
 import "bosdyn/api/docking/docking.proto";

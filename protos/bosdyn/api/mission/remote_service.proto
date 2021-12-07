@@ -8,6 +8,7 @@ syntax = "proto3";
 
 package bosdyn.api.mission;
 
+option go_package = "github.com/khssnv/spot-sdk/prebuilt/go/bosdyn/api/mission";
 option java_outer_classname = "RemoteServiceProto";
 
 import "bosdyn/api/mission/remote.proto";

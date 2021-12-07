@@ -6,6 +6,7 @@
 
 syntax = "proto3";
 
+option go_package = "github.com/khssnv/spot-sdk/prebuilt/go/bosdyn/api";
 option java_outer_classname = "DirectoryProto";
 
 import "bosdyn/api/header.proto";

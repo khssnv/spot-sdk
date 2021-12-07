@@ -6,6 +6,8 @@
 
 syntax = "proto3";
 
+option go_package = "github.com/khssnv/spot-sdk/prebuilt/go/bosdyn/api/graph_nav";
+
 import "google/protobuf/wrappers.proto";
 
 import "bosdyn/api/geometry.proto";

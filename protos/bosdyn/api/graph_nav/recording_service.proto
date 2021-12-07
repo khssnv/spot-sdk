@@ -10,6 +10,7 @@ package bosdyn.api.graph_nav;
 
 import "bosdyn/api/graph_nav/recording.proto";
 
+option go_package = "github.com/khssnv/spot-sdk/prebuilt/go/bosdyn/api/graph_nav";
 option java_outer_classname = "RecordingServiceProto";
 
 
