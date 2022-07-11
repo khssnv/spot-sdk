@@ -1,4 +1,4 @@
-// Copyright (c) 2021 Boston Dynamics, Inc.  All rights reserved.
+// Copyright (c) 2022 Boston Dynamics, Inc.  All rights reserved.
 //
 // Downloading, reproducing, distributing or otherwise using the SDK Software
 // is subject to the terms and conditions of the Boston Dynamics Software
@@ -449,6 +449,120 @@ func (x *StoreMetadataResponse) GetHeader() *ResponseHeader {
 	return nil
 }
 
+type StoreAlertDataRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Common request header.
+	Header *RequestHeader `protobuf:"bytes,1,opt,name=header,proto3" json:"header,omitempty"`
+	// AlertData to store.
+	AlertData *AssociatedAlertData `protobuf:"bytes,2,opt,name=alert_data,json=alertData,proto3" json:"alert_data,omitempty"`
+	// Data identifier of the alert.
+	DataId *DataIdentifier `protobuf:"bytes,3,opt,name=data_id,json=dataId,proto3" json:"data_id,omitempty"`
+}
+
+func (x *StoreAlertDataRequest) Reset() {
+	*x = StoreAlertDataRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[7]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *StoreAlertDataRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StoreAlertDataRequest) ProtoMessage() {}
+
+func (x *StoreAlertDataRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[7]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StoreAlertDataRequest.ProtoReflect.Descriptor instead.
+func (*StoreAlertDataRequest) Descriptor() ([]byte, []int) {
+	return file_bosdyn_api_data_acquisition_store_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *StoreAlertDataRequest) GetHeader() *RequestHeader {
+	if x != nil {
+		return x.Header
+	}
+	return nil
+}
+
+func (x *StoreAlertDataRequest) GetAlertData() *AssociatedAlertData {
+	if x != nil {
+		return x.AlertData
+	}
+	return nil
+}
+
+func (x *StoreAlertDataRequest) GetDataId() *DataIdentifier {
+	if x != nil {
+		return x.DataId
+	}
+	return nil
+}
+
+type StoreAlertDataResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Common response header.
+	Header *ResponseHeader `protobuf:"bytes,1,opt,name=header,proto3" json:"header,omitempty"`
+}
+
+func (x *StoreAlertDataResponse) Reset() {
+	*x = StoreAlertDataResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[8]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *StoreAlertDataResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StoreAlertDataResponse) ProtoMessage() {}
+
+func (x *StoreAlertDataResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[8]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StoreAlertDataResponse.ProtoReflect.Descriptor instead.
+func (*StoreAlertDataResponse) Descriptor() ([]byte, []int) {
+	return file_bosdyn_api_data_acquisition_store_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *StoreAlertDataResponse) GetHeader() *ResponseHeader {
+	if x != nil {
+		return x.Header
+	}
+	return nil
+}
+
 type StoreDataRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -467,7 +581,7 @@ type StoreDataRequest struct {
 func (x *StoreDataRequest) Reset() {
 	*x = StoreDataRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[7]
+		mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -480,7 +594,7 @@ func (x *StoreDataRequest) String() string {
 func (*StoreDataRequest) ProtoMessage() {}
 
 func (x *StoreDataRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[7]
+	mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -493,7 +607,7 @@ func (x *StoreDataRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StoreDataRequest.ProtoReflect.Descriptor instead.
 func (*StoreDataRequest) Descriptor() ([]byte, []int) {
-	return file_bosdyn_api_data_acquisition_store_proto_rawDescGZIP(), []int{7}
+	return file_bosdyn_api_data_acquisition_store_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *StoreDataRequest) GetHeader() *RequestHeader {
@@ -536,7 +650,7 @@ type StoreDataResponse struct {
 func (x *StoreDataResponse) Reset() {
 	*x = StoreDataResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[8]
+		mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -549,7 +663,7 @@ func (x *StoreDataResponse) String() string {
 func (*StoreDataResponse) ProtoMessage() {}
 
 func (x *StoreDataResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[8]
+	mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -562,7 +676,7 @@ func (x *StoreDataResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StoreDataResponse.ProtoReflect.Descriptor instead.
 func (*StoreDataResponse) Descriptor() ([]byte, []int) {
-	return file_bosdyn_api_data_acquisition_store_proto_rawDescGZIP(), []int{8}
+	return file_bosdyn_api_data_acquisition_store_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *StoreDataResponse) GetHeader() *ResponseHeader {
@@ -586,7 +700,7 @@ type ListCaptureActionsRequest struct {
 func (x *ListCaptureActionsRequest) Reset() {
 	*x = ListCaptureActionsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[9]
+		mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -599,7 +713,7 @@ func (x *ListCaptureActionsRequest) String() string {
 func (*ListCaptureActionsRequest) ProtoMessage() {}
 
 func (x *ListCaptureActionsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[9]
+	mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -612,7 +726,7 @@ func (x *ListCaptureActionsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListCaptureActionsRequest.ProtoReflect.Descriptor instead.
 func (*ListCaptureActionsRequest) Descriptor() ([]byte, []int) {
-	return file_bosdyn_api_data_acquisition_store_proto_rawDescGZIP(), []int{9}
+	return file_bosdyn_api_data_acquisition_store_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *ListCaptureActionsRequest) GetHeader() *RequestHeader {
@@ -643,7 +757,7 @@ type ListCaptureActionsResponse struct {
 func (x *ListCaptureActionsResponse) Reset() {
 	*x = ListCaptureActionsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[10]
+		mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -656,7 +770,7 @@ func (x *ListCaptureActionsResponse) String() string {
 func (*ListCaptureActionsResponse) ProtoMessage() {}
 
 func (x *ListCaptureActionsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[10]
+	mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -669,7 +783,7 @@ func (x *ListCaptureActionsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListCaptureActionsResponse.ProtoReflect.Descriptor instead.
 func (*ListCaptureActionsResponse) Descriptor() ([]byte, []int) {
-	return file_bosdyn_api_data_acquisition_store_proto_rawDescGZIP(), []int{10}
+	return file_bosdyn_api_data_acquisition_store_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *ListCaptureActionsResponse) GetHeader() *ResponseHeader {
@@ -700,7 +814,7 @@ type ListStoredImagesRequest struct {
 func (x *ListStoredImagesRequest) Reset() {
 	*x = ListStoredImagesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[11]
+		mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -713,7 +827,7 @@ func (x *ListStoredImagesRequest) String() string {
 func (*ListStoredImagesRequest) ProtoMessage() {}
 
 func (x *ListStoredImagesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[11]
+	mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -726,7 +840,7 @@ func (x *ListStoredImagesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListStoredImagesRequest.ProtoReflect.Descriptor instead.
 func (*ListStoredImagesRequest) Descriptor() ([]byte, []int) {
-	return file_bosdyn_api_data_acquisition_store_proto_rawDescGZIP(), []int{11}
+	return file_bosdyn_api_data_acquisition_store_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *ListStoredImagesRequest) GetHeader() *RequestHeader {
@@ -757,7 +871,7 @@ type ListStoredImagesResponse struct {
 func (x *ListStoredImagesResponse) Reset() {
 	*x = ListStoredImagesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[12]
+		mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -770,7 +884,7 @@ func (x *ListStoredImagesResponse) String() string {
 func (*ListStoredImagesResponse) ProtoMessage() {}
 
 func (x *ListStoredImagesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[12]
+	mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -783,7 +897,7 @@ func (x *ListStoredImagesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListStoredImagesResponse.ProtoReflect.Descriptor instead.
 func (*ListStoredImagesResponse) Descriptor() ([]byte, []int) {
-	return file_bosdyn_api_data_acquisition_store_proto_rawDescGZIP(), []int{12}
+	return file_bosdyn_api_data_acquisition_store_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *ListStoredImagesResponse) GetHeader() *ResponseHeader {
@@ -814,7 +928,7 @@ type ListStoredMetadataRequest struct {
 func (x *ListStoredMetadataRequest) Reset() {
 	*x = ListStoredMetadataRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[13]
+		mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -827,7 +941,7 @@ func (x *ListStoredMetadataRequest) String() string {
 func (*ListStoredMetadataRequest) ProtoMessage() {}
 
 func (x *ListStoredMetadataRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[13]
+	mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -840,7 +954,7 @@ func (x *ListStoredMetadataRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListStoredMetadataRequest.ProtoReflect.Descriptor instead.
 func (*ListStoredMetadataRequest) Descriptor() ([]byte, []int) {
-	return file_bosdyn_api_data_acquisition_store_proto_rawDescGZIP(), []int{13}
+	return file_bosdyn_api_data_acquisition_store_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *ListStoredMetadataRequest) GetHeader() *RequestHeader {
@@ -871,7 +985,7 @@ type ListStoredMetadataResponse struct {
 func (x *ListStoredMetadataResponse) Reset() {
 	*x = ListStoredMetadataResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[14]
+		mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -884,7 +998,7 @@ func (x *ListStoredMetadataResponse) String() string {
 func (*ListStoredMetadataResponse) ProtoMessage() {}
 
 func (x *ListStoredMetadataResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[14]
+	mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -897,7 +1011,7 @@ func (x *ListStoredMetadataResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListStoredMetadataResponse.ProtoReflect.Descriptor instead.
 func (*ListStoredMetadataResponse) Descriptor() ([]byte, []int) {
-	return file_bosdyn_api_data_acquisition_store_proto_rawDescGZIP(), []int{14}
+	return file_bosdyn_api_data_acquisition_store_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *ListStoredMetadataResponse) GetHeader() *ResponseHeader {
@@ -908,6 +1022,120 @@ func (x *ListStoredMetadataResponse) GetHeader() *ResponseHeader {
 }
 
 func (x *ListStoredMetadataResponse) GetDataIds() []*DataIdentifier {
+	if x != nil {
+		return x.DataIds
+	}
+	return nil
+}
+
+type ListStoredAlertDataRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Common request header.
+	Header *RequestHeader `protobuf:"bytes,1,opt,name=header,proto3" json:"header,omitempty"`
+	// Query parameters for finding AlertData.
+	Query *DataQueryParams `protobuf:"bytes,2,opt,name=query,proto3" json:"query,omitempty"`
+}
+
+func (x *ListStoredAlertDataRequest) Reset() {
+	*x = ListStoredAlertDataRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[17]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListStoredAlertDataRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListStoredAlertDataRequest) ProtoMessage() {}
+
+func (x *ListStoredAlertDataRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[17]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListStoredAlertDataRequest.ProtoReflect.Descriptor instead.
+func (*ListStoredAlertDataRequest) Descriptor() ([]byte, []int) {
+	return file_bosdyn_api_data_acquisition_store_proto_rawDescGZIP(), []int{17}
+}
+
+func (x *ListStoredAlertDataRequest) GetHeader() *RequestHeader {
+	if x != nil {
+		return x.Header
+	}
+	return nil
+}
+
+func (x *ListStoredAlertDataRequest) GetQuery() *DataQueryParams {
+	if x != nil {
+		return x.Query
+	}
+	return nil
+}
+
+type ListStoredAlertDataResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Common response header.
+	Header *ResponseHeader `protobuf:"bytes,1,opt,name=header,proto3" json:"header,omitempty"`
+	// List of AlertData data identifiers that satisfied the query parameters.
+	DataIds []*DataIdentifier `protobuf:"bytes,2,rep,name=data_ids,json=dataIds,proto3" json:"data_ids,omitempty"`
+}
+
+func (x *ListStoredAlertDataResponse) Reset() {
+	*x = ListStoredAlertDataResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[18]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListStoredAlertDataResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListStoredAlertDataResponse) ProtoMessage() {}
+
+func (x *ListStoredAlertDataResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[18]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListStoredAlertDataResponse.ProtoReflect.Descriptor instead.
+func (*ListStoredAlertDataResponse) Descriptor() ([]byte, []int) {
+	return file_bosdyn_api_data_acquisition_store_proto_rawDescGZIP(), []int{18}
+}
+
+func (x *ListStoredAlertDataResponse) GetHeader() *ResponseHeader {
+	if x != nil {
+		return x.Header
+	}
+	return nil
+}
+
+func (x *ListStoredAlertDataResponse) GetDataIds() []*DataIdentifier {
 	if x != nil {
 		return x.DataIds
 	}
@@ -928,7 +1156,7 @@ type ListStoredDataRequest struct {
 func (x *ListStoredDataRequest) Reset() {
 	*x = ListStoredDataRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[15]
+		mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -941,7 +1169,7 @@ func (x *ListStoredDataRequest) String() string {
 func (*ListStoredDataRequest) ProtoMessage() {}
 
 func (x *ListStoredDataRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[15]
+	mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -954,7 +1182,7 @@ func (x *ListStoredDataRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListStoredDataRequest.ProtoReflect.Descriptor instead.
 func (*ListStoredDataRequest) Descriptor() ([]byte, []int) {
-	return file_bosdyn_api_data_acquisition_store_proto_rawDescGZIP(), []int{15}
+	return file_bosdyn_api_data_acquisition_store_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *ListStoredDataRequest) GetHeader() *RequestHeader {
@@ -985,7 +1213,7 @@ type ListStoredDataResponse struct {
 func (x *ListStoredDataResponse) Reset() {
 	*x = ListStoredDataResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[16]
+		mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -998,7 +1226,7 @@ func (x *ListStoredDataResponse) String() string {
 func (*ListStoredDataResponse) ProtoMessage() {}
 
 func (x *ListStoredDataResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[16]
+	mi := &file_bosdyn_api_data_acquisition_store_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1011,7 +1239,7 @@ func (x *ListStoredDataResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListStoredDataResponse.ProtoReflect.Descriptor instead.
 func (*ListStoredDataResponse) Descriptor() ([]byte, []int) {
-	return file_bosdyn_api_data_acquisition_store_proto_rawDescGZIP(), []int{16}
+	return file_bosdyn_api_data_acquisition_store_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *ListStoredDataResponse) GetHeader() *ResponseHeader {
@@ -1097,6 +1325,23 @@ var file_bosdyn_api_data_acquisition_store_proto_rawDesc = []byte{
 	0x12, 0x32, 0x0a, 0x06, 0x68, 0x65, 0x61, 0x64, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b,
 	0x32, 0x1a, 0x2e, 0x62, 0x6f, 0x73, 0x64, 0x79, 0x6e, 0x2e, 0x61, 0x70, 0x69, 0x2e, 0x52, 0x65,
 	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x48, 0x65, 0x61, 0x64, 0x65, 0x72, 0x52, 0x06, 0x68, 0x65,
+	0x61, 0x64, 0x65, 0x72, 0x22, 0xbf, 0x01, 0x0a, 0x15, 0x53, 0x74, 0x6f, 0x72, 0x65, 0x41, 0x6c,
+	0x65, 0x72, 0x74, 0x44, 0x61, 0x74, 0x61, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x31,
+	0x0a, 0x06, 0x68, 0x65, 0x61, 0x64, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x19,
+	0x2e, 0x62, 0x6f, 0x73, 0x64, 0x79, 0x6e, 0x2e, 0x61, 0x70, 0x69, 0x2e, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x48, 0x65, 0x61, 0x64, 0x65, 0x72, 0x52, 0x06, 0x68, 0x65, 0x61, 0x64, 0x65,
+	0x72, 0x12, 0x3e, 0x0a, 0x0a, 0x61, 0x6c, 0x65, 0x72, 0x74, 0x5f, 0x64, 0x61, 0x74, 0x61, 0x18,
+	0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x62, 0x6f, 0x73, 0x64, 0x79, 0x6e, 0x2e, 0x61,
+	0x70, 0x69, 0x2e, 0x41, 0x73, 0x73, 0x6f, 0x63, 0x69, 0x61, 0x74, 0x65, 0x64, 0x41, 0x6c, 0x65,
+	0x72, 0x74, 0x44, 0x61, 0x74, 0x61, 0x52, 0x09, 0x61, 0x6c, 0x65, 0x72, 0x74, 0x44, 0x61, 0x74,
+	0x61, 0x12, 0x33, 0x0a, 0x07, 0x64, 0x61, 0x74, 0x61, 0x5f, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x1a, 0x2e, 0x62, 0x6f, 0x73, 0x64, 0x79, 0x6e, 0x2e, 0x61, 0x70, 0x69, 0x2e,
+	0x44, 0x61, 0x74, 0x61, 0x49, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x52, 0x06,
+	0x64, 0x61, 0x74, 0x61, 0x49, 0x64, 0x22, 0x4c, 0x0a, 0x16, 0x53, 0x74, 0x6f, 0x72, 0x65, 0x41,
+	0x6c, 0x65, 0x72, 0x74, 0x44, 0x61, 0x74, 0x61, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x12, 0x32, 0x0a, 0x06, 0x68, 0x65, 0x61, 0x64, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x1a, 0x2e, 0x62, 0x6f, 0x73, 0x64, 0x79, 0x6e, 0x2e, 0x61, 0x70, 0x69, 0x2e, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x48, 0x65, 0x61, 0x64, 0x65, 0x72, 0x52, 0x06, 0x68, 0x65,
 	0x61, 0x64, 0x65, 0x72, 0x22, 0xb5, 0x01, 0x0a, 0x10, 0x53, 0x74, 0x6f, 0x72, 0x65, 0x44, 0x61,
 	0x74, 0x61, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x31, 0x0a, 0x06, 0x68, 0x65, 0x61,
 	0x64, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x62, 0x6f, 0x73, 0x64,
@@ -1164,6 +1409,23 @@ var file_bosdyn_api_data_acquisition_store_proto_rawDesc = []byte{
 	0x5f, 0x69, 0x64, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1a, 0x2e, 0x62, 0x6f, 0x73,
 	0x64, 0x79, 0x6e, 0x2e, 0x61, 0x70, 0x69, 0x2e, 0x44, 0x61, 0x74, 0x61, 0x49, 0x64, 0x65, 0x6e,
 	0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x52, 0x07, 0x64, 0x61, 0x74, 0x61, 0x49, 0x64, 0x73, 0x22,
+	0x82, 0x01, 0x0a, 0x1a, 0x4c, 0x69, 0x73, 0x74, 0x53, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x41, 0x6c,
+	0x65, 0x72, 0x74, 0x44, 0x61, 0x74, 0x61, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x31,
+	0x0a, 0x06, 0x68, 0x65, 0x61, 0x64, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x19,
+	0x2e, 0x62, 0x6f, 0x73, 0x64, 0x79, 0x6e, 0x2e, 0x61, 0x70, 0x69, 0x2e, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x48, 0x65, 0x61, 0x64, 0x65, 0x72, 0x52, 0x06, 0x68, 0x65, 0x61, 0x64, 0x65,
+	0x72, 0x12, 0x31, 0x0a, 0x05, 0x71, 0x75, 0x65, 0x72, 0x79, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x1b, 0x2e, 0x62, 0x6f, 0x73, 0x64, 0x79, 0x6e, 0x2e, 0x61, 0x70, 0x69, 0x2e, 0x44, 0x61,
+	0x74, 0x61, 0x51, 0x75, 0x65, 0x72, 0x79, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x52, 0x05, 0x71,
+	0x75, 0x65, 0x72, 0x79, 0x22, 0x88, 0x01, 0x0a, 0x1b, 0x4c, 0x69, 0x73, 0x74, 0x53, 0x74, 0x6f,
+	0x72, 0x65, 0x64, 0x41, 0x6c, 0x65, 0x72, 0x74, 0x44, 0x61, 0x74, 0x61, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x32, 0x0a, 0x06, 0x68, 0x65, 0x61, 0x64, 0x65, 0x72, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x1a, 0x2e, 0x62, 0x6f, 0x73, 0x64, 0x79, 0x6e, 0x2e, 0x61, 0x70,
+	0x69, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x48, 0x65, 0x61, 0x64, 0x65, 0x72,
+	0x52, 0x06, 0x68, 0x65, 0x61, 0x64, 0x65, 0x72, 0x12, 0x35, 0x0a, 0x08, 0x64, 0x61, 0x74, 0x61,
+	0x5f, 0x69, 0x64, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1a, 0x2e, 0x62, 0x6f, 0x73,
+	0x64, 0x79, 0x6e, 0x2e, 0x61, 0x70, 0x69, 0x2e, 0x44, 0x61, 0x74, 0x61, 0x49, 0x64, 0x65, 0x6e,
+	0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x52, 0x07, 0x64, 0x61, 0x74, 0x61, 0x49, 0x64, 0x73, 0x22,
 	0x7d, 0x0a, 0x15, 0x4c, 0x69, 0x73, 0x74, 0x53, 0x74, 0x6f, 0x72, 0x65, 0x64, 0x44, 0x61, 0x74,
 	0x61, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x31, 0x0a, 0x06, 0x68, 0x65, 0x61, 0x64,
 	0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x62, 0x6f, 0x73, 0x64, 0x79,
@@ -1200,71 +1462,84 @@ func file_bosdyn_api_data_acquisition_store_proto_rawDescGZIP() []byte {
 	return file_bosdyn_api_data_acquisition_store_proto_rawDescData
 }
 
-var file_bosdyn_api_data_acquisition_store_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
+var file_bosdyn_api_data_acquisition_store_proto_msgTypes = make([]protoimpl.MessageInfo, 21)
 var file_bosdyn_api_data_acquisition_store_proto_goTypes = []interface{}{
-	(*ActionIdQuery)(nil),              // 0: bosdyn.api.ActionIdQuery
-	(*TimeRangeQuery)(nil),             // 1: bosdyn.api.TimeRangeQuery
-	(*DataQueryParams)(nil),            // 2: bosdyn.api.DataQueryParams
-	(*StoreImageRequest)(nil),          // 3: bosdyn.api.StoreImageRequest
-	(*StoreImageResponse)(nil),         // 4: bosdyn.api.StoreImageResponse
-	(*StoreMetadataRequest)(nil),       // 5: bosdyn.api.StoreMetadataRequest
-	(*StoreMetadataResponse)(nil),      // 6: bosdyn.api.StoreMetadataResponse
-	(*StoreDataRequest)(nil),           // 7: bosdyn.api.StoreDataRequest
-	(*StoreDataResponse)(nil),          // 8: bosdyn.api.StoreDataResponse
-	(*ListCaptureActionsRequest)(nil),  // 9: bosdyn.api.ListCaptureActionsRequest
-	(*ListCaptureActionsResponse)(nil), // 10: bosdyn.api.ListCaptureActionsResponse
-	(*ListStoredImagesRequest)(nil),    // 11: bosdyn.api.ListStoredImagesRequest
-	(*ListStoredImagesResponse)(nil),   // 12: bosdyn.api.ListStoredImagesResponse
-	(*ListStoredMetadataRequest)(nil),  // 13: bosdyn.api.ListStoredMetadataRequest
-	(*ListStoredMetadataResponse)(nil), // 14: bosdyn.api.ListStoredMetadataResponse
-	(*ListStoredDataRequest)(nil),      // 15: bosdyn.api.ListStoredDataRequest
-	(*ListStoredDataResponse)(nil),     // 16: bosdyn.api.ListStoredDataResponse
-	(*CaptureActionId)(nil),            // 17: bosdyn.api.CaptureActionId
-	(*timestamppb.Timestamp)(nil),      // 18: google.protobuf.Timestamp
-	(*RequestHeader)(nil),              // 19: bosdyn.api.RequestHeader
-	(*ImageCapture)(nil),               // 20: bosdyn.api.ImageCapture
-	(*DataIdentifier)(nil),             // 21: bosdyn.api.DataIdentifier
-	(*ResponseHeader)(nil),             // 22: bosdyn.api.ResponseHeader
-	(*AssociatedMetadata)(nil),         // 23: bosdyn.api.AssociatedMetadata
+	(*ActionIdQuery)(nil),               // 0: bosdyn.api.ActionIdQuery
+	(*TimeRangeQuery)(nil),              // 1: bosdyn.api.TimeRangeQuery
+	(*DataQueryParams)(nil),             // 2: bosdyn.api.DataQueryParams
+	(*StoreImageRequest)(nil),           // 3: bosdyn.api.StoreImageRequest
+	(*StoreImageResponse)(nil),          // 4: bosdyn.api.StoreImageResponse
+	(*StoreMetadataRequest)(nil),        // 5: bosdyn.api.StoreMetadataRequest
+	(*StoreMetadataResponse)(nil),       // 6: bosdyn.api.StoreMetadataResponse
+	(*StoreAlertDataRequest)(nil),       // 7: bosdyn.api.StoreAlertDataRequest
+	(*StoreAlertDataResponse)(nil),      // 8: bosdyn.api.StoreAlertDataResponse
+	(*StoreDataRequest)(nil),            // 9: bosdyn.api.StoreDataRequest
+	(*StoreDataResponse)(nil),           // 10: bosdyn.api.StoreDataResponse
+	(*ListCaptureActionsRequest)(nil),   // 11: bosdyn.api.ListCaptureActionsRequest
+	(*ListCaptureActionsResponse)(nil),  // 12: bosdyn.api.ListCaptureActionsResponse
+	(*ListStoredImagesRequest)(nil),     // 13: bosdyn.api.ListStoredImagesRequest
+	(*ListStoredImagesResponse)(nil),    // 14: bosdyn.api.ListStoredImagesResponse
+	(*ListStoredMetadataRequest)(nil),   // 15: bosdyn.api.ListStoredMetadataRequest
+	(*ListStoredMetadataResponse)(nil),  // 16: bosdyn.api.ListStoredMetadataResponse
+	(*ListStoredAlertDataRequest)(nil),  // 17: bosdyn.api.ListStoredAlertDataRequest
+	(*ListStoredAlertDataResponse)(nil), // 18: bosdyn.api.ListStoredAlertDataResponse
+	(*ListStoredDataRequest)(nil),       // 19: bosdyn.api.ListStoredDataRequest
+	(*ListStoredDataResponse)(nil),      // 20: bosdyn.api.ListStoredDataResponse
+	(*CaptureActionId)(nil),             // 21: bosdyn.api.CaptureActionId
+	(*timestamppb.Timestamp)(nil),       // 22: google.protobuf.Timestamp
+	(*RequestHeader)(nil),               // 23: bosdyn.api.RequestHeader
+	(*ImageCapture)(nil),                // 24: bosdyn.api.ImageCapture
+	(*DataIdentifier)(nil),              // 25: bosdyn.api.DataIdentifier
+	(*ResponseHeader)(nil),              // 26: bosdyn.api.ResponseHeader
+	(*AssociatedMetadata)(nil),          // 27: bosdyn.api.AssociatedMetadata
+	(*AssociatedAlertData)(nil),         // 28: bosdyn.api.AssociatedAlertData
 }
 var file_bosdyn_api_data_acquisition_store_proto_depIdxs = []int32{
-	17, // 0: bosdyn.api.ActionIdQuery.action_ids:type_name -> bosdyn.api.CaptureActionId
-	18, // 1: bosdyn.api.TimeRangeQuery.from_timestamp:type_name -> google.protobuf.Timestamp
-	18, // 2: bosdyn.api.TimeRangeQuery.to_timestamp:type_name -> google.protobuf.Timestamp
+	21, // 0: bosdyn.api.ActionIdQuery.action_ids:type_name -> bosdyn.api.CaptureActionId
+	22, // 1: bosdyn.api.TimeRangeQuery.from_timestamp:type_name -> google.protobuf.Timestamp
+	22, // 2: bosdyn.api.TimeRangeQuery.to_timestamp:type_name -> google.protobuf.Timestamp
 	1,  // 3: bosdyn.api.DataQueryParams.time_range:type_name -> bosdyn.api.TimeRangeQuery
 	0,  // 4: bosdyn.api.DataQueryParams.action_ids:type_name -> bosdyn.api.ActionIdQuery
-	19, // 5: bosdyn.api.StoreImageRequest.header:type_name -> bosdyn.api.RequestHeader
-	20, // 6: bosdyn.api.StoreImageRequest.image:type_name -> bosdyn.api.ImageCapture
-	21, // 7: bosdyn.api.StoreImageRequest.data_id:type_name -> bosdyn.api.DataIdentifier
-	22, // 8: bosdyn.api.StoreImageResponse.header:type_name -> bosdyn.api.ResponseHeader
-	19, // 9: bosdyn.api.StoreMetadataRequest.header:type_name -> bosdyn.api.RequestHeader
-	23, // 10: bosdyn.api.StoreMetadataRequest.metadata:type_name -> bosdyn.api.AssociatedMetadata
-	21, // 11: bosdyn.api.StoreMetadataRequest.data_id:type_name -> bosdyn.api.DataIdentifier
-	22, // 12: bosdyn.api.StoreMetadataResponse.header:type_name -> bosdyn.api.ResponseHeader
-	19, // 13: bosdyn.api.StoreDataRequest.header:type_name -> bosdyn.api.RequestHeader
-	21, // 14: bosdyn.api.StoreDataRequest.data_id:type_name -> bosdyn.api.DataIdentifier
-	22, // 15: bosdyn.api.StoreDataResponse.header:type_name -> bosdyn.api.ResponseHeader
-	19, // 16: bosdyn.api.ListCaptureActionsRequest.header:type_name -> bosdyn.api.RequestHeader
-	2,  // 17: bosdyn.api.ListCaptureActionsRequest.query:type_name -> bosdyn.api.DataQueryParams
-	22, // 18: bosdyn.api.ListCaptureActionsResponse.header:type_name -> bosdyn.api.ResponseHeader
-	17, // 19: bosdyn.api.ListCaptureActionsResponse.action_ids:type_name -> bosdyn.api.CaptureActionId
-	19, // 20: bosdyn.api.ListStoredImagesRequest.header:type_name -> bosdyn.api.RequestHeader
-	2,  // 21: bosdyn.api.ListStoredImagesRequest.query:type_name -> bosdyn.api.DataQueryParams
-	22, // 22: bosdyn.api.ListStoredImagesResponse.header:type_name -> bosdyn.api.ResponseHeader
-	21, // 23: bosdyn.api.ListStoredImagesResponse.data_ids:type_name -> bosdyn.api.DataIdentifier
-	19, // 24: bosdyn.api.ListStoredMetadataRequest.header:type_name -> bosdyn.api.RequestHeader
-	2,  // 25: bosdyn.api.ListStoredMetadataRequest.query:type_name -> bosdyn.api.DataQueryParams
-	22, // 26: bosdyn.api.ListStoredMetadataResponse.header:type_name -> bosdyn.api.ResponseHeader
-	21, // 27: bosdyn.api.ListStoredMetadataResponse.data_ids:type_name -> bosdyn.api.DataIdentifier
-	19, // 28: bosdyn.api.ListStoredDataRequest.header:type_name -> bosdyn.api.RequestHeader
-	2,  // 29: bosdyn.api.ListStoredDataRequest.query:type_name -> bosdyn.api.DataQueryParams
-	22, // 30: bosdyn.api.ListStoredDataResponse.header:type_name -> bosdyn.api.ResponseHeader
-	21, // 31: bosdyn.api.ListStoredDataResponse.data_ids:type_name -> bosdyn.api.DataIdentifier
-	32, // [32:32] is the sub-list for method output_type
-	32, // [32:32] is the sub-list for method input_type
-	32, // [32:32] is the sub-list for extension type_name
-	32, // [32:32] is the sub-list for extension extendee
-	0,  // [0:32] is the sub-list for field type_name
+	23, // 5: bosdyn.api.StoreImageRequest.header:type_name -> bosdyn.api.RequestHeader
+	24, // 6: bosdyn.api.StoreImageRequest.image:type_name -> bosdyn.api.ImageCapture
+	25, // 7: bosdyn.api.StoreImageRequest.data_id:type_name -> bosdyn.api.DataIdentifier
+	26, // 8: bosdyn.api.StoreImageResponse.header:type_name -> bosdyn.api.ResponseHeader
+	23, // 9: bosdyn.api.StoreMetadataRequest.header:type_name -> bosdyn.api.RequestHeader
+	27, // 10: bosdyn.api.StoreMetadataRequest.metadata:type_name -> bosdyn.api.AssociatedMetadata
+	25, // 11: bosdyn.api.StoreMetadataRequest.data_id:type_name -> bosdyn.api.DataIdentifier
+	26, // 12: bosdyn.api.StoreMetadataResponse.header:type_name -> bosdyn.api.ResponseHeader
+	23, // 13: bosdyn.api.StoreAlertDataRequest.header:type_name -> bosdyn.api.RequestHeader
+	28, // 14: bosdyn.api.StoreAlertDataRequest.alert_data:type_name -> bosdyn.api.AssociatedAlertData
+	25, // 15: bosdyn.api.StoreAlertDataRequest.data_id:type_name -> bosdyn.api.DataIdentifier
+	26, // 16: bosdyn.api.StoreAlertDataResponse.header:type_name -> bosdyn.api.ResponseHeader
+	23, // 17: bosdyn.api.StoreDataRequest.header:type_name -> bosdyn.api.RequestHeader
+	25, // 18: bosdyn.api.StoreDataRequest.data_id:type_name -> bosdyn.api.DataIdentifier
+	26, // 19: bosdyn.api.StoreDataResponse.header:type_name -> bosdyn.api.ResponseHeader
+	23, // 20: bosdyn.api.ListCaptureActionsRequest.header:type_name -> bosdyn.api.RequestHeader
+	2,  // 21: bosdyn.api.ListCaptureActionsRequest.query:type_name -> bosdyn.api.DataQueryParams
+	26, // 22: bosdyn.api.ListCaptureActionsResponse.header:type_name -> bosdyn.api.ResponseHeader
+	21, // 23: bosdyn.api.ListCaptureActionsResponse.action_ids:type_name -> bosdyn.api.CaptureActionId
+	23, // 24: bosdyn.api.ListStoredImagesRequest.header:type_name -> bosdyn.api.RequestHeader
+	2,  // 25: bosdyn.api.ListStoredImagesRequest.query:type_name -> bosdyn.api.DataQueryParams
+	26, // 26: bosdyn.api.ListStoredImagesResponse.header:type_name -> bosdyn.api.ResponseHeader
+	25, // 27: bosdyn.api.ListStoredImagesResponse.data_ids:type_name -> bosdyn.api.DataIdentifier
+	23, // 28: bosdyn.api.ListStoredMetadataRequest.header:type_name -> bosdyn.api.RequestHeader
+	2,  // 29: bosdyn.api.ListStoredMetadataRequest.query:type_name -> bosdyn.api.DataQueryParams
+	26, // 30: bosdyn.api.ListStoredMetadataResponse.header:type_name -> bosdyn.api.ResponseHeader
+	25, // 31: bosdyn.api.ListStoredMetadataResponse.data_ids:type_name -> bosdyn.api.DataIdentifier
+	23, // 32: bosdyn.api.ListStoredAlertDataRequest.header:type_name -> bosdyn.api.RequestHeader
+	2,  // 33: bosdyn.api.ListStoredAlertDataRequest.query:type_name -> bosdyn.api.DataQueryParams
+	26, // 34: bosdyn.api.ListStoredAlertDataResponse.header:type_name -> bosdyn.api.ResponseHeader
+	25, // 35: bosdyn.api.ListStoredAlertDataResponse.data_ids:type_name -> bosdyn.api.DataIdentifier
+	23, // 36: bosdyn.api.ListStoredDataRequest.header:type_name -> bosdyn.api.RequestHeader
+	2,  // 37: bosdyn.api.ListStoredDataRequest.query:type_name -> bosdyn.api.DataQueryParams
+	26, // 38: bosdyn.api.ListStoredDataResponse.header:type_name -> bosdyn.api.ResponseHeader
+	25, // 39: bosdyn.api.ListStoredDataResponse.data_ids:type_name -> bosdyn.api.DataIdentifier
+	40, // [40:40] is the sub-list for method output_type
+	40, // [40:40] is the sub-list for method input_type
+	40, // [40:40] is the sub-list for extension type_name
+	40, // [40:40] is the sub-list for extension extendee
+	0,  // [0:40] is the sub-list for field type_name
 }
 
 func init() { file_bosdyn_api_data_acquisition_store_proto_init() }
@@ -1361,7 +1636,7 @@ func file_bosdyn_api_data_acquisition_store_proto_init() {
 			}
 		}
 		file_bosdyn_api_data_acquisition_store_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*StoreDataRequest); i {
+			switch v := v.(*StoreAlertDataRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1373,7 +1648,7 @@ func file_bosdyn_api_data_acquisition_store_proto_init() {
 			}
 		}
 		file_bosdyn_api_data_acquisition_store_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*StoreDataResponse); i {
+			switch v := v.(*StoreAlertDataResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1385,7 +1660,7 @@ func file_bosdyn_api_data_acquisition_store_proto_init() {
 			}
 		}
 		file_bosdyn_api_data_acquisition_store_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListCaptureActionsRequest); i {
+			switch v := v.(*StoreDataRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1397,7 +1672,7 @@ func file_bosdyn_api_data_acquisition_store_proto_init() {
 			}
 		}
 		file_bosdyn_api_data_acquisition_store_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListCaptureActionsResponse); i {
+			switch v := v.(*StoreDataResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1409,7 +1684,7 @@ func file_bosdyn_api_data_acquisition_store_proto_init() {
 			}
 		}
 		file_bosdyn_api_data_acquisition_store_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListStoredImagesRequest); i {
+			switch v := v.(*ListCaptureActionsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1421,7 +1696,7 @@ func file_bosdyn_api_data_acquisition_store_proto_init() {
 			}
 		}
 		file_bosdyn_api_data_acquisition_store_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListStoredImagesResponse); i {
+			switch v := v.(*ListCaptureActionsResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1433,7 +1708,7 @@ func file_bosdyn_api_data_acquisition_store_proto_init() {
 			}
 		}
 		file_bosdyn_api_data_acquisition_store_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListStoredMetadataRequest); i {
+			switch v := v.(*ListStoredImagesRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1445,7 +1720,7 @@ func file_bosdyn_api_data_acquisition_store_proto_init() {
 			}
 		}
 		file_bosdyn_api_data_acquisition_store_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListStoredMetadataResponse); i {
+			switch v := v.(*ListStoredImagesResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1457,7 +1732,7 @@ func file_bosdyn_api_data_acquisition_store_proto_init() {
 			}
 		}
 		file_bosdyn_api_data_acquisition_store_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListStoredDataRequest); i {
+			switch v := v.(*ListStoredMetadataRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1469,6 +1744,54 @@ func file_bosdyn_api_data_acquisition_store_proto_init() {
 			}
 		}
 		file_bosdyn_api_data_acquisition_store_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListStoredMetadataResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_bosdyn_api_data_acquisition_store_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListStoredAlertDataRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_bosdyn_api_data_acquisition_store_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListStoredAlertDataResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_bosdyn_api_data_acquisition_store_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListStoredDataRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_bosdyn_api_data_acquisition_store_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListStoredDataResponse); i {
 			case 0:
 				return &v.state
@@ -1491,7 +1814,7 @@ func file_bosdyn_api_data_acquisition_store_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_bosdyn_api_data_acquisition_store_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   17,
+			NumMessages:   21,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

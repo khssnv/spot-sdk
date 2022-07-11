@@ -1,4 +1,4 @@
-// Copyright (c) 2021 Boston Dynamics, Inc.  All rights reserved.
+// Copyright (c) 2022 Boston Dynamics, Inc.  All rights reserved.
 //
 // Downloading, reproducing, distributing or otherwise using the SDK Software
 // is subject to the terms and conditions of the Boston Dynamics Software
@@ -2846,6 +2846,77 @@ func (x *RestartWhenPaused) GetChild() *Node {
 	return nil
 }
 
+// This node will:
+//   1. Check if there are behavior faults.  If there are none, it will return success.
+//   2. Check if all behavior faults are clearable.  If not, it will return failure.
+//   3. Try to clear the clearable behavior faults.  If it cannot, it will return failure.
+type ClearBehaviorFaults struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Name of the service to use.
+	ServiceName string `protobuf:"bytes,1,opt,name=service_name,json=serviceName,proto3" json:"service_name,omitempty"`
+	// Host machine the service is running on.
+	Host string `protobuf:"bytes,2,opt,name=host,proto3" json:"host,omitempty"`
+	// Name of a robot state message defined in the blackboard.
+	// Usually provided by embedding this node in a [BosdynRobotState] node.
+	RobotStateBlackboardName string `protobuf:"bytes,3,opt,name=robot_state_blackboard_name,json=robotStateBlackboardName,proto3" json:"robot_state_blackboard_name,omitempty"`
+}
+
+func (x *ClearBehaviorFaults) Reset() {
+	*x = ClearBehaviorFaults{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_bosdyn_api_mission_nodes_proto_msgTypes[34]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ClearBehaviorFaults) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ClearBehaviorFaults) ProtoMessage() {}
+
+func (x *ClearBehaviorFaults) ProtoReflect() protoreflect.Message {
+	mi := &file_bosdyn_api_mission_nodes_proto_msgTypes[34]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ClearBehaviorFaults.ProtoReflect.Descriptor instead.
+func (*ClearBehaviorFaults) Descriptor() ([]byte, []int) {
+	return file_bosdyn_api_mission_nodes_proto_rawDescGZIP(), []int{34}
+}
+
+func (x *ClearBehaviorFaults) GetServiceName() string {
+	if x != nil {
+		return x.ServiceName
+	}
+	return ""
+}
+
+func (x *ClearBehaviorFaults) GetHost() string {
+	if x != nil {
+		return x.Host
+	}
+	return ""
+}
+
+func (x *ClearBehaviorFaults) GetRobotStateBlackboardName() string {
+	if x != nil {
+		return x.RobotStateBlackboardName
+	}
+	return ""
+}
+
 // Options for where to retrieve values from.
 type Condition_Operand struct {
 	state         protoimpl.MessageState
@@ -2861,7 +2932,7 @@ type Condition_Operand struct {
 func (x *Condition_Operand) Reset() {
 	*x = Condition_Operand{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bosdyn_api_mission_nodes_proto_msgTypes[34]
+		mi := &file_bosdyn_api_mission_nodes_proto_msgTypes[35]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2874,7 +2945,7 @@ func (x *Condition_Operand) String() string {
 func (*Condition_Operand) ProtoMessage() {}
 
 func (x *Condition_Operand) ProtoReflect() protoreflect.Message {
-	mi := &file_bosdyn_api_mission_nodes_proto_msgTypes[34]
+	mi := &file_bosdyn_api_mission_nodes_proto_msgTypes[35]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2944,7 +3015,7 @@ type Prompt_Option struct {
 func (x *Prompt_Option) Reset() {
 	*x = Prompt_Option{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bosdyn_api_mission_nodes_proto_msgTypes[35]
+		mi := &file_bosdyn_api_mission_nodes_proto_msgTypes[36]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2957,7 +3028,7 @@ func (x *Prompt_Option) String() string {
 func (*Prompt_Option) ProtoMessage() {}
 
 func (x *Prompt_Option) ProtoReflect() protoreflect.Message {
-	mi := &file_bosdyn_api_mission_nodes_proto_msgTypes[35]
+	mi := &file_bosdyn_api_mission_nodes_proto_msgTypes[36]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3003,7 +3074,7 @@ type SpotCamPtz_AdjustParameters struct {
 func (x *SpotCamPtz_AdjustParameters) Reset() {
 	*x = SpotCamPtz_AdjustParameters{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bosdyn_api_mission_nodes_proto_msgTypes[36]
+		mi := &file_bosdyn_api_mission_nodes_proto_msgTypes[37]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3016,7 +3087,7 @@ func (x *SpotCamPtz_AdjustParameters) String() string {
 func (*SpotCamPtz_AdjustParameters) ProtoMessage() {}
 
 func (x *SpotCamPtz_AdjustParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_bosdyn_api_mission_nodes_proto_msgTypes[36]
+	mi := &file_bosdyn_api_mission_nodes_proto_msgTypes[37]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3541,12 +3612,21 @@ var file_bosdyn_api_mission_nodes_proto_rawDesc = []byte{
 	0x61, 0x72, 0x74, 0x57, 0x68, 0x65, 0x6e, 0x50, 0x61, 0x75, 0x73, 0x65, 0x64, 0x12, 0x2e, 0x0a,
 	0x05, 0x63, 0x68, 0x69, 0x6c, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x62,
 	0x6f, 0x73, 0x64, 0x79, 0x6e, 0x2e, 0x61, 0x70, 0x69, 0x2e, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f,
-	0x6e, 0x2e, 0x4e, 0x6f, 0x64, 0x65, 0x52, 0x05, 0x63, 0x68, 0x69, 0x6c, 0x64, 0x42, 0x47, 0x42,
-	0x0a, 0x4e, 0x6f, 0x64, 0x65, 0x73, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x5a, 0x39, 0x67, 0x69, 0x74,
-	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6b, 0x68, 0x73, 0x73, 0x6e, 0x76, 0x2f, 0x73,
-	0x70, 0x6f, 0x74, 0x2d, 0x73, 0x64, 0x6b, 0x2f, 0x70, 0x72, 0x65, 0x62, 0x75, 0x69, 0x6c, 0x74,
-	0x2f, 0x67, 0x6f, 0x2f, 0x62, 0x6f, 0x73, 0x64, 0x79, 0x6e, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x6d,
-	0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x6e, 0x2e, 0x4e, 0x6f, 0x64, 0x65, 0x52, 0x05, 0x63, 0x68, 0x69, 0x6c, 0x64, 0x22, 0x8b, 0x01,
+	0x0a, 0x13, 0x43, 0x6c, 0x65, 0x61, 0x72, 0x42, 0x65, 0x68, 0x61, 0x76, 0x69, 0x6f, 0x72, 0x46,
+	0x61, 0x75, 0x6c, 0x74, 0x73, 0x12, 0x21, 0x0a, 0x0c, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x73, 0x65, 0x72,
+	0x76, 0x69, 0x63, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x68, 0x6f, 0x73, 0x74,
+	0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x68, 0x6f, 0x73, 0x74, 0x12, 0x3d, 0x0a, 0x1b,
+	0x72, 0x6f, 0x62, 0x6f, 0x74, 0x5f, 0x73, 0x74, 0x61, 0x74, 0x65, 0x5f, 0x62, 0x6c, 0x61, 0x63,
+	0x6b, 0x62, 0x6f, 0x61, 0x72, 0x64, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x18, 0x72, 0x6f, 0x62, 0x6f, 0x74, 0x53, 0x74, 0x61, 0x74, 0x65, 0x42, 0x6c, 0x61,
+	0x63, 0x6b, 0x62, 0x6f, 0x61, 0x72, 0x64, 0x4e, 0x61, 0x6d, 0x65, 0x42, 0x47, 0x42, 0x0a, 0x4e,
+	0x6f, 0x64, 0x65, 0x73, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x5a, 0x39, 0x67, 0x69, 0x74, 0x68, 0x75,
+	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6b, 0x68, 0x73, 0x73, 0x6e, 0x76, 0x2f, 0x73, 0x70, 0x6f,
+	0x74, 0x2d, 0x73, 0x64, 0x6b, 0x2f, 0x70, 0x72, 0x65, 0x62, 0x75, 0x69, 0x6c, 0x74, 0x2f, 0x67,
+	0x6f, 0x2f, 0x62, 0x6f, 0x73, 0x64, 0x79, 0x6e, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x6d, 0x69, 0x73,
+	0x73, 0x69, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -3562,7 +3642,7 @@ func file_bosdyn_api_mission_nodes_proto_rawDescGZIP() []byte {
 }
 
 var file_bosdyn_api_mission_nodes_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
-var file_bosdyn_api_mission_nodes_proto_msgTypes = make([]protoimpl.MessageInfo, 38)
+var file_bosdyn_api_mission_nodes_proto_msgTypes = make([]protoimpl.MessageInfo, 39)
 var file_bosdyn_api_mission_nodes_proto_goTypes = []interface{}{
 	(Condition_Compare)(0),                   // 0: bosdyn.api.mission.Condition.Compare
 	(Condition_HandleStaleness)(0),           // 1: bosdyn.api.mission.Condition.HandleStaleness
@@ -3601,83 +3681,84 @@ var file_bosdyn_api_mission_nodes_proto_goTypes = []interface{}{
 	(*DateToBlackboard)(nil),                 // 34: bosdyn.api.mission.DateToBlackboard
 	(*ConstantResult)(nil),                   // 35: bosdyn.api.mission.ConstantResult
 	(*RestartWhenPaused)(nil),                // 36: bosdyn.api.mission.RestartWhenPaused
-	(*Condition_Operand)(nil),                // 37: bosdyn.api.mission.Condition.Operand
-	(*Prompt_Option)(nil),                    // 38: bosdyn.api.mission.Prompt.Option
-	(*SpotCamPtz_AdjustParameters)(nil),      // 39: bosdyn.api.mission.SpotCamPtz.AdjustParameters
-	nil,                                      // 40: bosdyn.api.mission.SpotCamLed.BrightnessesEntry
-	(*UserData)(nil),                         // 41: bosdyn.api.mission.UserData
-	(*anypb.Any)(nil),                        // 42: google.protobuf.Any
-	(*KeyValue)(nil),                         // 43: bosdyn.api.mission.KeyValue
-	(*VariableDeclaration)(nil),              // 44: bosdyn.api.mission.VariableDeclaration
-	(*durationpb.Duration)(nil),              // 45: google.protobuf.Duration
-	(*api.RobotCommand)(nil),                 // 46: bosdyn.api.RobotCommand
-	(api.PowerCommandRequest_Request)(0),     // 47: bosdyn.api.PowerCommandRequest.Request
-	(*graph_nav.RouteGenParams)(nil),         // 48: bosdyn.api.graph_nav.RouteGenParams
-	(*graph_nav.TravelParams)(nil),           // 49: bosdyn.api.graph_nav.TravelParams
-	(*graph_nav.Route)(nil),                  // 50: bosdyn.api.graph_nav.Route
-	(*graph_nav.RouteFollowingParams)(nil),   // 51: bosdyn.api.graph_nav.RouteFollowingParams
-	(*graph_nav.SetLocalizationRequest)(nil), // 52: bosdyn.api.graph_nav.SetLocalizationRequest
-	(*api.Event)(nil),                        // 53: bosdyn.api.Event
-	(*spot_cam.PtzPosition)(nil),             // 54: bosdyn.api.spot_cam.PtzPosition
-	(*spot_cam.Camera)(nil),                  // 55: bosdyn.api.spot_cam.Camera
-	(spot_cam.Logpoint_RecordType)(0),        // 56: bosdyn.api.spot_cam.Logpoint.RecordType
-	(docking.PrepPoseBehavior)(0),            // 57: bosdyn.api.docking.PrepPoseBehavior
-	(*api.AcquireDataRequest)(nil),           // 58: bosdyn.api.AcquireDataRequest
-	(Result)(0),                              // 59: bosdyn.api.mission.Result
-	(*ConstantValue)(nil),                    // 60: bosdyn.api.mission.ConstantValue
-	(*api.SE3Pose)(nil),                      // 61: bosdyn.api.SE3Pose
+	(*ClearBehaviorFaults)(nil),              // 37: bosdyn.api.mission.ClearBehaviorFaults
+	(*Condition_Operand)(nil),                // 38: bosdyn.api.mission.Condition.Operand
+	(*Prompt_Option)(nil),                    // 39: bosdyn.api.mission.Prompt.Option
+	(*SpotCamPtz_AdjustParameters)(nil),      // 40: bosdyn.api.mission.SpotCamPtz.AdjustParameters
+	nil,                                      // 41: bosdyn.api.mission.SpotCamLed.BrightnessesEntry
+	(*UserData)(nil),                         // 42: bosdyn.api.mission.UserData
+	(*anypb.Any)(nil),                        // 43: google.protobuf.Any
+	(*KeyValue)(nil),                         // 44: bosdyn.api.mission.KeyValue
+	(*VariableDeclaration)(nil),              // 45: bosdyn.api.mission.VariableDeclaration
+	(*durationpb.Duration)(nil),              // 46: google.protobuf.Duration
+	(*api.RobotCommand)(nil),                 // 47: bosdyn.api.RobotCommand
+	(api.PowerCommandRequest_Request)(0),     // 48: bosdyn.api.PowerCommandRequest.Request
+	(*graph_nav.RouteGenParams)(nil),         // 49: bosdyn.api.graph_nav.RouteGenParams
+	(*graph_nav.TravelParams)(nil),           // 50: bosdyn.api.graph_nav.TravelParams
+	(*graph_nav.Route)(nil),                  // 51: bosdyn.api.graph_nav.Route
+	(*graph_nav.RouteFollowingParams)(nil),   // 52: bosdyn.api.graph_nav.RouteFollowingParams
+	(*graph_nav.SetLocalizationRequest)(nil), // 53: bosdyn.api.graph_nav.SetLocalizationRequest
+	(*api.Event)(nil),                        // 54: bosdyn.api.Event
+	(*spot_cam.PtzPosition)(nil),             // 55: bosdyn.api.spot_cam.PtzPosition
+	(*spot_cam.Camera)(nil),                  // 56: bosdyn.api.spot_cam.Camera
+	(spot_cam.Logpoint_RecordType)(0),        // 57: bosdyn.api.spot_cam.Logpoint.RecordType
+	(docking.PrepPoseBehavior)(0),            // 58: bosdyn.api.docking.PrepPoseBehavior
+	(*api.AcquireDataRequest)(nil),           // 59: bosdyn.api.AcquireDataRequest
+	(Result)(0),                              // 60: bosdyn.api.mission.Result
+	(*ConstantValue)(nil),                    // 61: bosdyn.api.mission.ConstantValue
+	(*api.SE3Pose)(nil),                      // 62: bosdyn.api.SE3Pose
 }
 var file_bosdyn_api_mission_nodes_proto_depIdxs = []int32{
-	41, // 0: bosdyn.api.mission.Node.user_data:type_name -> bosdyn.api.mission.UserData
-	42, // 1: bosdyn.api.mission.Node.impl:type_name -> google.protobuf.Any
-	43, // 2: bosdyn.api.mission.Node.parameter_values:type_name -> bosdyn.api.mission.KeyValue
-	43, // 3: bosdyn.api.mission.Node.overrides:type_name -> bosdyn.api.mission.KeyValue
-	44, // 4: bosdyn.api.mission.Node.parameters:type_name -> bosdyn.api.mission.VariableDeclaration
+	42, // 0: bosdyn.api.mission.Node.user_data:type_name -> bosdyn.api.mission.UserData
+	43, // 1: bosdyn.api.mission.Node.impl:type_name -> google.protobuf.Any
+	44, // 2: bosdyn.api.mission.Node.parameter_values:type_name -> bosdyn.api.mission.KeyValue
+	44, // 3: bosdyn.api.mission.Node.overrides:type_name -> bosdyn.api.mission.KeyValue
+	45, // 4: bosdyn.api.mission.Node.parameters:type_name -> bosdyn.api.mission.VariableDeclaration
 	3,  // 5: bosdyn.api.mission.Sequence.children:type_name -> bosdyn.api.mission.Node
 	3,  // 6: bosdyn.api.mission.Selector.children:type_name -> bosdyn.api.mission.Node
 	3,  // 7: bosdyn.api.mission.Repeat.child:type_name -> bosdyn.api.mission.Node
 	3,  // 8: bosdyn.api.mission.Retry.child:type_name -> bosdyn.api.mission.Node
-	45, // 9: bosdyn.api.mission.ForDuration.duration:type_name -> google.protobuf.Duration
+	46, // 9: bosdyn.api.mission.ForDuration.duration:type_name -> google.protobuf.Duration
 	3,  // 10: bosdyn.api.mission.ForDuration.child:type_name -> bosdyn.api.mission.Node
 	3,  // 11: bosdyn.api.mission.ForDuration.timeout_child:type_name -> bosdyn.api.mission.Node
 	3,  // 12: bosdyn.api.mission.SimpleParallel.primary:type_name -> bosdyn.api.mission.Node
 	3,  // 13: bosdyn.api.mission.SimpleParallel.secondary:type_name -> bosdyn.api.mission.Node
-	37, // 14: bosdyn.api.mission.Condition.lhs:type_name -> bosdyn.api.mission.Condition.Operand
-	37, // 15: bosdyn.api.mission.Condition.rhs:type_name -> bosdyn.api.mission.Condition.Operand
+	38, // 14: bosdyn.api.mission.Condition.lhs:type_name -> bosdyn.api.mission.Condition.Operand
+	38, // 15: bosdyn.api.mission.Condition.rhs:type_name -> bosdyn.api.mission.Condition.Operand
 	0,  // 16: bosdyn.api.mission.Condition.operation:type_name -> bosdyn.api.mission.Condition.Compare
 	1,  // 17: bosdyn.api.mission.Condition.handle_staleness:type_name -> bosdyn.api.mission.Condition.HandleStaleness
 	3,  // 18: bosdyn.api.mission.BosdynRobotState.child:type_name -> bosdyn.api.mission.Node
 	3,  // 19: bosdyn.api.mission.BosdynDockState.child:type_name -> bosdyn.api.mission.Node
-	46, // 20: bosdyn.api.mission.BosdynRobotCommand.command:type_name -> bosdyn.api.RobotCommand
-	47, // 21: bosdyn.api.mission.BosdynPowerRequest.request:type_name -> bosdyn.api.PowerCommandRequest.Request
-	48, // 22: bosdyn.api.mission.BosdynNavigateTo.route_gen_params:type_name -> bosdyn.api.graph_nav.RouteGenParams
-	49, // 23: bosdyn.api.mission.BosdynNavigateTo.travel_params:type_name -> bosdyn.api.graph_nav.TravelParams
-	50, // 24: bosdyn.api.mission.BosdynNavigateRoute.route:type_name -> bosdyn.api.graph_nav.Route
-	51, // 25: bosdyn.api.mission.BosdynNavigateRoute.route_follow_params:type_name -> bosdyn.api.graph_nav.RouteFollowingParams
-	49, // 26: bosdyn.api.mission.BosdynNavigateRoute.travel_params:type_name -> bosdyn.api.graph_nav.TravelParams
+	47, // 20: bosdyn.api.mission.BosdynRobotCommand.command:type_name -> bosdyn.api.RobotCommand
+	48, // 21: bosdyn.api.mission.BosdynPowerRequest.request:type_name -> bosdyn.api.PowerCommandRequest.Request
+	49, // 22: bosdyn.api.mission.BosdynNavigateTo.route_gen_params:type_name -> bosdyn.api.graph_nav.RouteGenParams
+	50, // 23: bosdyn.api.mission.BosdynNavigateTo.travel_params:type_name -> bosdyn.api.graph_nav.TravelParams
+	51, // 24: bosdyn.api.mission.BosdynNavigateRoute.route:type_name -> bosdyn.api.graph_nav.Route
+	52, // 25: bosdyn.api.mission.BosdynNavigateRoute.route_follow_params:type_name -> bosdyn.api.graph_nav.RouteFollowingParams
+	50, // 26: bosdyn.api.mission.BosdynNavigateRoute.travel_params:type_name -> bosdyn.api.graph_nav.TravelParams
 	3,  // 27: bosdyn.api.mission.BosdynGraphNavState.child:type_name -> bosdyn.api.mission.Node
-	52, // 28: bosdyn.api.mission.BosdynGraphNavLocalize.localization_request:type_name -> bosdyn.api.graph_nav.SetLocalizationRequest
-	53, // 29: bosdyn.api.mission.BosdynRecordEvent.event:type_name -> bosdyn.api.Event
-	43, // 30: bosdyn.api.mission.RemoteGrpc.inputs:type_name -> bosdyn.api.mission.KeyValue
-	38, // 31: bosdyn.api.mission.Prompt.options:type_name -> bosdyn.api.mission.Prompt.Option
+	53, // 28: bosdyn.api.mission.BosdynGraphNavLocalize.localization_request:type_name -> bosdyn.api.graph_nav.SetLocalizationRequest
+	54, // 29: bosdyn.api.mission.BosdynRecordEvent.event:type_name -> bosdyn.api.Event
+	44, // 30: bosdyn.api.mission.RemoteGrpc.inputs:type_name -> bosdyn.api.mission.KeyValue
+	39, // 31: bosdyn.api.mission.Prompt.options:type_name -> bosdyn.api.mission.Prompt.Option
 	3,  // 32: bosdyn.api.mission.Prompt.child:type_name -> bosdyn.api.mission.Node
-	54, // 33: bosdyn.api.mission.SpotCamPtz.ptz_position:type_name -> bosdyn.api.spot_cam.PtzPosition
-	39, // 34: bosdyn.api.mission.SpotCamPtz.adjust_parameters:type_name -> bosdyn.api.mission.SpotCamPtz.AdjustParameters
-	55, // 35: bosdyn.api.mission.SpotCamStoreMedia.camera:type_name -> bosdyn.api.spot_cam.Camera
-	56, // 36: bosdyn.api.mission.SpotCamStoreMedia.type:type_name -> bosdyn.api.spot_cam.Logpoint.RecordType
-	40, // 37: bosdyn.api.mission.SpotCamLed.brightnesses:type_name -> bosdyn.api.mission.SpotCamLed.BrightnessesEntry
+	55, // 33: bosdyn.api.mission.SpotCamPtz.ptz_position:type_name -> bosdyn.api.spot_cam.PtzPosition
+	40, // 34: bosdyn.api.mission.SpotCamPtz.adjust_parameters:type_name -> bosdyn.api.mission.SpotCamPtz.AdjustParameters
+	56, // 35: bosdyn.api.mission.SpotCamStoreMedia.camera:type_name -> bosdyn.api.spot_cam.Camera
+	57, // 36: bosdyn.api.mission.SpotCamStoreMedia.type:type_name -> bosdyn.api.spot_cam.Logpoint.RecordType
+	41, // 37: bosdyn.api.mission.SpotCamLed.brightnesses:type_name -> bosdyn.api.mission.SpotCamLed.BrightnessesEntry
 	3,  // 38: bosdyn.api.mission.Dock.child:type_name -> bosdyn.api.mission.Node
-	57, // 39: bosdyn.api.mission.Dock.prep_pose_behavior:type_name -> bosdyn.api.docking.PrepPoseBehavior
-	58, // 40: bosdyn.api.mission.DataAcquisition.request:type_name -> bosdyn.api.AcquireDataRequest
+	58, // 39: bosdyn.api.mission.Dock.prep_pose_behavior:type_name -> bosdyn.api.docking.PrepPoseBehavior
+	59, // 40: bosdyn.api.mission.DataAcquisition.request:type_name -> bosdyn.api.AcquireDataRequest
 	2,  // 41: bosdyn.api.mission.DataAcquisition.completion_behavior:type_name -> bosdyn.api.mission.DataAcquisition.CompletionBehavior
-	43, // 42: bosdyn.api.mission.DefineBlackboard.blackboard_variables:type_name -> bosdyn.api.mission.KeyValue
+	44, // 42: bosdyn.api.mission.DefineBlackboard.blackboard_variables:type_name -> bosdyn.api.mission.KeyValue
 	3,  // 43: bosdyn.api.mission.DefineBlackboard.child:type_name -> bosdyn.api.mission.Node
-	43, // 44: bosdyn.api.mission.SetBlackboard.blackboard_variables:type_name -> bosdyn.api.mission.KeyValue
-	59, // 45: bosdyn.api.mission.ConstantResult.result:type_name -> bosdyn.api.mission.Result
+	44, // 44: bosdyn.api.mission.SetBlackboard.blackboard_variables:type_name -> bosdyn.api.mission.KeyValue
+	60, // 45: bosdyn.api.mission.ConstantResult.result:type_name -> bosdyn.api.mission.Result
 	3,  // 46: bosdyn.api.mission.RestartWhenPaused.child:type_name -> bosdyn.api.mission.Node
-	44, // 47: bosdyn.api.mission.Condition.Operand.var:type_name -> bosdyn.api.mission.VariableDeclaration
-	60, // 48: bosdyn.api.mission.Condition.Operand.const:type_name -> bosdyn.api.mission.ConstantValue
-	61, // 49: bosdyn.api.mission.SpotCamPtz.AdjustParameters.waypoint_tform_body:type_name -> bosdyn.api.SE3Pose
+	45, // 47: bosdyn.api.mission.Condition.Operand.var:type_name -> bosdyn.api.mission.VariableDeclaration
+	61, // 48: bosdyn.api.mission.Condition.Operand.const:type_name -> bosdyn.api.mission.ConstantValue
+	62, // 49: bosdyn.api.mission.SpotCamPtz.AdjustParameters.waypoint_tform_body:type_name -> bosdyn.api.SE3Pose
 	50, // [50:50] is the sub-list for method output_type
 	50, // [50:50] is the sub-list for method input_type
 	50, // [50:50] is the sub-list for extension type_name
@@ -4101,7 +4182,7 @@ func file_bosdyn_api_mission_nodes_proto_init() {
 			}
 		}
 		file_bosdyn_api_mission_nodes_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Condition_Operand); i {
+			switch v := v.(*ClearBehaviorFaults); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -4113,7 +4194,7 @@ func file_bosdyn_api_mission_nodes_proto_init() {
 			}
 		}
 		file_bosdyn_api_mission_nodes_proto_msgTypes[35].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Prompt_Option); i {
+			switch v := v.(*Condition_Operand); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -4125,6 +4206,18 @@ func file_bosdyn_api_mission_nodes_proto_init() {
 			}
 		}
 		file_bosdyn_api_mission_nodes_proto_msgTypes[36].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Prompt_Option); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_bosdyn_api_mission_nodes_proto_msgTypes[37].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SpotCamPtz_AdjustParameters); i {
 			case 0:
 				return &v.state
@@ -4141,7 +4234,7 @@ func file_bosdyn_api_mission_nodes_proto_init() {
 		(*Node_Impl)(nil),
 		(*Node_NodeReference)(nil),
 	}
-	file_bosdyn_api_mission_nodes_proto_msgTypes[34].OneofWrappers = []interface{}{
+	file_bosdyn_api_mission_nodes_proto_msgTypes[35].OneofWrappers = []interface{}{
 		(*Condition_Operand_Var)(nil),
 		(*Condition_Operand_Const)(nil),
 	}
@@ -4151,7 +4244,7 @@ func file_bosdyn_api_mission_nodes_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_bosdyn_api_mission_nodes_proto_rawDesc,
 			NumEnums:      3,
-			NumMessages:   38,
+			NumMessages:   39,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

@@ -1,4 +1,4 @@
-// Copyright (c) 2021 Boston Dynamics, Inc.  All rights reserved.
+// Copyright (c) 2022 Boston Dynamics, Inc.  All rights reserved.
 //
 // Downloading, reproducing, distributing or otherwise using the SDK Software
 // is subject to the terms and conditions of the Boston Dynamics Software
@@ -1877,8 +1877,8 @@ type FrameTreeSnapshot_ParentEdge struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// The name of the parent frame. Must be non-empty. If parent_frame_name is
-	// not a key in edge_map, it is the root of the tree.
+	// The name of the parent frame. If a frame has no parent (parent_frame_name is empty),
+	// it is the root of the tree.
 	ParentFrameName string `protobuf:"bytes,1,opt,name=parent_frame_name,json=parentFrameName,proto3" json:"parent_frame_name,omitempty"`
 	// Transform representing the pose of the child frame in the parent's frame.
 	ParentTformChild *SE3Pose `protobuf:"bytes,2,opt,name=parent_tform_child,json=parentTformChild,proto3" json:"parent_tform_child,omitempty"`

@@ -1,4 +1,4 @@
-// Copyright (c) 2021 Boston Dynamics, Inc.  All rights reserved.
+// Copyright (c) 2022 Boston Dynamics, Inc.  All rights reserved.
 //
 // Downloading, reproducing, distributing or otherwise using the SDK Software
 // is subject to the terms and conditions of the Boston Dynamics Software
@@ -226,8 +226,8 @@ func (SignalTick_Encoding) EnumDescriptor() ([]byte, []int) {
 type Event_Level int32
 
 const (
+	Event_LEVEL_UNSET Event_Level = 0
 	// Non-critical events
-	Event_LEVEL_UNSET  Event_Level = 0
 	Event_LEVEL_LOW    Event_Level = 1
 	Event_LEVEL_MEDIUM Event_Level = 2
 	Event_LEVEL_HIGH   Event_Level = 3
