@@ -1,4 +1,4 @@
-module github.com/khssnv/spot-sdk/prebuilt/go/bosdyn
+module github.com/khssnv/spot-sdk/prebuilt/go/bosdyn/api
 
 go 1.17
 
