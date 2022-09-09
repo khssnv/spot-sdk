@@ -13,7 +13,7 @@
 package api
 
 import (
-	docking "github.com/khssnv/spot-sdk/prebuilt/go/bosdyn/api/docking"
+	// docking "github.com/khssnv/spot-sdk/prebuilt/go/bosdyn/api/docking"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	anypb "google.golang.org/protobuf/types/known/anypb"
@@ -794,7 +794,7 @@ type DockProperties struct {
 	// Consistent id associated with a given dock.
 	DockId uint32 `protobuf:"varint,1,opt,name=dock_id,json=dockId,proto3" json:"dock_id,omitempty"`
 	// Type of dock.
-	Type docking.DockType `protobuf:"varint,2,opt,name=type,proto3,enum=bosdyn.api.docking.DockType" json:"type,omitempty"`
+	// Type docking.DockType `protobuf:"varint,2,opt,name=type,proto3,enum=bosdyn.api.docking.DockType" json:"type,omitempty"`
 	// The frame name for the location of dock origin. This will be included in the transform snapshot.
 	FrameNameDock string `protobuf:"bytes,3,opt,name=frame_name_dock,json=frameNameDock,proto3" json:"frame_name_dock,omitempty"`
 	// Availability if the dock can be used
@@ -842,12 +842,12 @@ func (x *DockProperties) GetDockId() uint32 {
 	return 0
 }
 
-func (x *DockProperties) GetType() docking.DockType {
-	if x != nil {
-		return x.Type
-	}
-	return docking.DockType(0)
-}
+// func (x *DockProperties) GetType() docking.DockType {
+// 	if x != nil {
+// 		return x.Type
+// 	}
+// 	return docking.DockType(0)
+// }
 
 func (x *DockProperties) GetFrameNameDock() string {
 	if x != nil {
@@ -2237,7 +2237,7 @@ var file_bosdyn_api_world_object_proto_goTypes = []interface{}{
 	(*KeypointSet)(nil),                        // 31: bosdyn.api.KeypointSet
 	(*ImageSource)(nil),                        // 32: bosdyn.api.ImageSource
 	(*ImageCapture)(nil),                       // 33: bosdyn.api.ImageCapture
-	(docking.DockType)(0),                      // 34: bosdyn.api.docking.DockType
+	// (docking.DockType)(0),                      // 34: bosdyn.api.docking.DockType
 	(*Vec2)(nil),                               // 35: bosdyn.api.Vec2
 	(*SE3Covariance)(nil),                      // 36: bosdyn.api.SE3Covariance
 	(*Ray)(nil),                                // 37: bosdyn.api.Ray
